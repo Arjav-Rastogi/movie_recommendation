@@ -16,7 +16,10 @@ def fetch_poster(movie_id):
 
     response = requests.get(url, headers=headers)
     data = response.json()
-    path = "http://image.tmdb.org/t/p/w500"+data['posters'][0]['file_path']
+    if not data['posters']:
+        path = "https://images.app.goo.gl/nKgnKzVPpQ8Rrkiw6"
+    else:
+        path = "http://image.tmdb.org/t/p/w500"+data['posters'][0]['file_path']
     return path
 
 def recommend(movie):
