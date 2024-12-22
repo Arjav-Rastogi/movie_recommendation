@@ -17,7 +17,7 @@ def fetch_poster(movie_id):
     response = requests.get(url, headers=headers)
     data = response.json()
     if not data['posters']:
-        path = "https://images.app.goo.gl/nKgnKzVPpQ8Rrkiw6"
+        path = "https://img.freepik.com/premium-vector/cinema-movie-set-cartoon-vector-illustration_87720-8022.jpg"
     else:
         path = "http://image.tmdb.org/t/p/w500"+data['posters'][0]['file_path']
     return path
